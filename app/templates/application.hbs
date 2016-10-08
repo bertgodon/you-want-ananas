@@ -1,3 +1,15 @@
 <h1>you want ananas?</h1>
+<h2>My iTunes Player</h2>
 
-{{outlet}}
+{{input type="text" value=query_input  key-up=(action 'search') class="light" placeholder="Search"}}
+<div>
+</div>
+
+<table>
+  {{#each model as |song|}}
+    <tr>
+      <td>{{song.artistName}}</td>
+      <td>{{song.trackName}}</td>
+    </tr>
+  {{/each}}
+</table>

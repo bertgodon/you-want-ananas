@@ -1,9 +1,16 @@
 <h2>My iTunes Player</h2>
-{{input value=(mut (get song artistName))}}
 
-{{input value="search"}}
-<ul>
+
+
+<div>
+</div>
+
+<table>
   {{#each model as |song|}}
-    <li>{{song.artistName}} - {{song.trackName}}</li>
+    <tr>
+      <td><img {{bind-attr src=song.artworkUrl60}} ></td>
+      <td>{{song.artistName}}</td>
+      <td>{{song.trackName}}</td>
+    </tr>
   {{/each}}
-</ul>
+</table>
