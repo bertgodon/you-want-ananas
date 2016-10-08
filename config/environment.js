@@ -6,6 +6,8 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    contentSecurityPolicyHeader: 'Content-Security-Policy',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -18,6 +20,28 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+
+  ENV.contentSecurityPolicy = {
+    // Deny everything by default
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://itunes.apple.com apple.com itunes.apple.com maps.googleapis.com maps.gstatic.com",
+
+    // Allow fonts to be loaded from http://fonts.gstatic.com
+    'font-src': ["'self'", "http://fonts.gstatic.com"],
+
+    // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+    'connect-src': ["'self'", "https://api.mixpanel.com", "http://custom-api.local","https://itunes.apple.com", "*","http://localhsot"],
+
+    // Allow images from the origin itself (i.e. current domain)
+    'img-src': "'self'",
+
+    // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+    'style-src': ["'self'", "'unsafe-inline'", "http://fonts.googleapis.com"],
+
+    // `media-src` will be omitted from policy
+    // Browser will fallback to default-src for media resources (which is to deny, see above).
+    'media-src': null
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
