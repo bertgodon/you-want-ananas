@@ -1,16 +1,1 @@
-<h2>My iTunes Player</h2>
-
-
-
-<div>
-</div>
-
-<table>
-  {{#each model as |song|}}
-    <tr>
-      <td><img {{bind-attr src=song.artworkUrl60}} ></td>
-      <td>{{song.artistName}}</td>
-      <td>{{song.trackName}}</td>
-    </tr>
-  {{/each}}
-</table>
+{{outlet}}
