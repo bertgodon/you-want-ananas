@@ -24,16 +24,16 @@ module.exports = function(environment) {
   ENV.contentSecurityPolicy = {
     // Deny everything by default
     'default-src': "'none'",
-    'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://itunes.apple.com apple.com itunes.apple.com maps.googleapis.com maps.gstatic.com",
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://itunes.apple.com mzstatic.com apple.com itunes.apple.com maps.googleapis.com maps.gstatic.com",
 
     // Allow fonts to be loaded from http://fonts.gstatic.com
     'font-src': ["'self'", "http://fonts.gstatic.com"],
 
     // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-    'connect-src': ["'self'", "https://api.mixpanel.com", "http://custom-api.local","https://itunes.apple.com", "*","http://localhsot"],
+    'connect-src': ["'self'", "https://api.mixpanel.com", "http://custom-api.local","https://itunes.apple.com", "mzstatic.com","*","http://localhsot"],
 
     // Allow images from the origin itself (i.e. current domain)
-    'img-src': "'self'",
+    'img-src': ["'self'", "*.mzstatic.com"],
 
     // Allow inline styles and loaded CSS from http://fonts.googleapis.com
     'style-src': ["'self'", "'unsafe-inline'", "http://fonts.googleapis.com"],
