@@ -2,4 +2,8 @@
 {{input value=(mut (get song artistName))}}
 
 {{input value="search"}}
-{{song.artistName}}
+<ul>
+  {{#each model as |song|}}
+    <li>{{song.artistName}} - {{song.trackName}}</li>
+  {{/each}}
+</ul>
