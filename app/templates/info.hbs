@@ -1,11 +1,14 @@
 
-ga terug
+{{#link-to "songs"}}Back{{/link-to}}
 <div><img src={{model.artworkUrl60}}></div>
 <div>
   <span>{{model.artistName}}</span>
   <span>{{model.trackName}}</span>
 </div>
+<div>
+  <span>Preview: </span>
  <audio controls>
    <source src="{{model.previewUrl}}" type="audio/mpeg">
 
 </audio>
+</div>
