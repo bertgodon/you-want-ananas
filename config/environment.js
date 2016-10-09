@@ -23,7 +23,7 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     // Deny everything by default
-    'default-src': "'none'",
+    'default-src': ["'none'","http://a100.phobos.apple.com", "*.phobos.apple.com"],
     'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://itunes.apple.com mzstatic.com apple.com itunes.apple.com maps.googleapis.com maps.gstatic.com",
 
     // Allow fonts to be loaded from http://fonts.gstatic.com

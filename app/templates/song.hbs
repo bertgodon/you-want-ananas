@@ -1,12 +1,1 @@
-{{input type="text" value=query_input  key-up=(action 'search') class="light" placeholder="Search"}}
-
-<table border="1">
-  {{#each model as |song|}}
-    <tr>
-      <td><img src={{song.artworkUrl60}}></td>
-      <td>{{song.artistName}}</td>
-      <td>{{song.trackName}}</td>
-      <td>{{#link-to "info" song}}detail{{/link-to}}</td>
-    </tr>
-  {{/each}}
-</table>
+song.hbs

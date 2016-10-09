@@ -5,7 +5,7 @@ export default DS.JSONAPIAdapter.extend({
   buildURL: function(query) {
        // customize the url based on the parameters
        // lets assume the id is the blog name
-       return `${this.get('host')}?term=${query}&limit=25`;
+       return `${this.get('host')}?term=${query}&limit=25&entity=song`;
    },
 
    ajaxOptions: function(url, type, options) {
@@ -14,7 +14,6 @@ export default DS.JSONAPIAdapter.extend({
            return hash;
     },
     query: function(store, type, query) {
-
       return this.ajax(this.buildURL(query), 'GET');
   },
 

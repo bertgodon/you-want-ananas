@@ -5,4 +5,5 @@ export default DS.Model.extend({
   trackName: DS.attr('string'),
   artworkUrl60: DS.attr(),
   trackId : DS.attr(),
+  previewUrl : DS.attr(),
 });
