@@ -5,10 +5,17 @@ export default Ember.Controller.extend({
   actions: {
    search(query) {
      if (query !== '') {
-       var result = this.get('store').query('song', query);
-             this.set('model', result);
-     } else {
+      var controller = this;
+      this.set("currentlyLoading" , true);
+      this.get('store').query('song', query).then(function(data) {
+         controller.set("currentlyLoading" , false);
+         controller.set('model', data);
+       });
+
+
      }
    }
+
+
  }
 });

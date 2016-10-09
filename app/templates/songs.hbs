@@ -1,5 +1,9 @@
-{{input type="text" value=query_input  key-up=(action 'search') class="light" placeholder="Search"}}
+<input type="text"  placeholder="Search" oninput={{action "search" value="target.value"}} />
 
+{{#if currentlyLoading}}
+  searching
+{{/if }}
+{{#if model}}
 <table border="1">
   {{#each model as |song|}}
     <tr>
@@ -10,3 +14,8 @@
     </tr>
   {{/each}}
 </table>
+{{else}}
+<div>
+  Please type a filter
+</div>
+{{/if}}
